@@ -28,7 +28,7 @@ void CreateArray(int i_L_, int i_M_){
     
     for(i=0;i<i_L_;i++){
         static int j=0;
-        if(!TreeinRoad) j++;
+        if(!TreeinRoad[i]) j++;
     }
     
     cout << "the remain tree of road is" << j+1;

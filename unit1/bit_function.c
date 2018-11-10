@@ -1,5 +1,12 @@
 #include <stdio.h>
 
+union a{
+	int x;
+	short y;
+	char z;
+	double c;
+}a;
+
 int main(){
     int x=12;
     //12=1100(2)
@@ -21,7 +28,9 @@ int main(){
 	n2<<=15;
 	n3<<=15;
 	c<<=6;
-	printf("n1=%x,n2=%d,n3=%d,c=%x,c<<4=%d",n1,n2,n3,c,c<<4);
+	printf("n1=%x,n2=%d,n3=%d,c=%x,c<<4=%d\n",n1,n2,n3,c,c<<4);
+	a.c=188;
+	printf("%08lf\n",a.c);
 
 
 	return 0;

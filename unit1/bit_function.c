@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <ctype.h>
+
 
 union a{
 	int x;
@@ -31,6 +33,10 @@ int main(){
 	printf("n1=%x,n2=%d,n3=%d,c=%x,c<<4=%d\n",n1,n2,n3,c,c<<4);
 	a.c=188;
 	printf("%08lf\n",a.c);
+	a.z='c';
+	if(isupper(a.z)) printf("a共用体里面的成员z是大写字母\n");
+	if(islower(a.z)) printf("a共用体里面的成员z是小写字母\n");
+
 
 
 	return 0;

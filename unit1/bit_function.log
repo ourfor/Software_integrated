@@ -1,4 +1,13 @@
 #include <stdio.h>
+#include <ctype.h>
+
+
+union a{
+	int x;
+	short y;
+	char z;
+	double c;
+}a;
 
 int main(){
     int x=12;
@@ -21,11 +30,19 @@ int main(){
 	n2<<=15;
 	n3<<=15;
 	c<<=6;
-	printf("n1=%x,n2=%d,n3=%d,c=%x,c<<4=%d",n1,n2,n3,c,c<<4);
+	printf("n1=%x,n2=%d,n3=%d,c=%x,c<<4=%d\n",n1,n2,n3,c,c<<4);
+	a.c=188;
+	printf("%08lf\n",a.c);
+	a.z='c';
+	if(isupper(a.z)) printf("a共用体里面的成员z是大写字母\n");
+	if(islower(a.z)) printf("a共用体里面的成员z是小写字母\n");
+
 
 
 	return 0;
 }
+
+
 1100&1010=1000 8
 1100|1010=1110 14
 1100^1010=110 6
@@ -33,3 +50,5 @@ int main(){
 ~1010>>2 2
 ~1010<<2 40
 n1=78000,n2=-32768,n3=32768,c=c0,c<<4=3072
+188.000000
+a共用体里面的成员z是小写字母
